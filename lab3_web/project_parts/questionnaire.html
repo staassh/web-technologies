@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4 — Анкета користувача</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #222;
+        }
+
+        h1 {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto 24px;
+            padding: 0 12px;
+            text-align: center;
+            font-size: clamp(26px, 4vw, 36px);
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        form {
+            width: 100%;
+            margin: 0;
+        }
+
+        fieldset {
+            min-width: 0;
+            width: 100%;
+            margin: 0 0 22px;
+            padding: 0 24px 24px;
+            border: 1px solid #cfd4da;
+            border-radius: 12px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+        legend {
+            float: left;
+            width: calc(100% + 48px);
+            max-width: none;
+            margin: 0 -24px 22px;
+            padding: 16px 24px;
+            background: #eef2f6;
+            border-bottom: 1px solid #d7dce1;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.25;
+            text-align: left;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        legend + * {
+            clear: both;
+        }
+
+        .field {
+            display: block;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .field:last-child {
+            margin-bottom: 0;
+        }
+
+        .field > label,
+        .file-row label {
+            display: block;
+            width: 100%;
+            margin: 0 0 7px;
+            font-weight: 600;
+            text-align: left;
+            line-height: 1.3;
+            overflow-wrap: anywhere;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select,
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 42px;
+            margin: 0;
+            padding: 10px 12px;
+            border: 1px solid #adb5bd;
+            border-radius: 7px;
+            background: #ffffff;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        select[multiple] {
+            min-height: 150px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: 2px solid #4b86c5;
+            outline-offset: 1px;
+        }
+
+        .hint {
+            margin: 6px 0 0;
+            font-size: 13px;
+            line-height: 1.35;
+            color: #666;
+            overflow-wrap: anywhere;
+        }
+
+        .group-title {
+            width: 100%;
+            margin: 18px 0 10px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: left;
+            overflow-wrap: anywhere;
+        }
+
+        .group-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 18px;
+        }
+
+        .choices.four {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .choice {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            min-height: 46px;
+            gap: 9px;
+            margin: 0;
+            padding: 10px 12px;
+            border: 1px solid #d4d8dd;
+            border-radius: 7px;
+            background: #f8f9fa;
+            cursor: pointer;
+            line-height: 1.25;
+            overflow-wrap: anywhere;
+        }
+
+        .choice input {
+            flex: 0 0 auto;
+            width: auto;
+            margin: 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 4px 0 24px;
+        }
+
+        button {
+            min-width: 160px;
+            max-width: 100%;
+            padding: 11px 18px;
+            border: 1px solid #6c757d;
+            border-radius: 7px;
+            background: #ffffff;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background: #e9f1fb;
+        }
+
+        button:hover {
+            filter: brightness(0.97);
+        }
+
+        .file-row {
+            display: block;
+            width: 100%;
+        }
+
+        .home {
+            width: 100%;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .home a {
+            display: inline-block;
+            max-width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            fieldset {
+                padding: 0 16px 18px;
+            }
+
+            legend {
+                width: calc(100% + 32px);
+                margin: 0 -16px 18px;
+                padding: 14px 16px;
+                font-size: 17px;
+            }
+
+            .choices,
+            .choices.four {
+                grid-template-columns: 1fr;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Анкета користувача</h1>
+
+    <div class="wrap">
+        <form action="questionnaire.html" method="get">
+            <fieldset>
+                <legend>Особисті дані</legend>
+
+                <div class="field">
+                    <label for="name">Ім'я:</label>
+                    <input id="name" type="text" name="name" value="" placeholder="Введіть ім'я" required tabindex="1">
+                </div>
+
+                <div class="field">
+                    <label for="surname">Прізвище:</label>
+                    <input id="surname" type="text" name="surname" value="" placeholder="Введіть прізвище" required tabindex="2">
+                </div>
+
+                <div class="field">
+                    <label for="pass">Пароль:</label>
+                    <input id="pass" type="password" name="password" value="" placeholder="Наприклад: Abc123" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6}" required tabindex="3">
+                    <p class="hint">Рівно 6 символів: хоча б одна велика літера, одна мала літера та одна цифра.</p>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" value="" placeholder="name@example.com" autocomplete="off" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" required tabindex="4">
+                </div>
+
+                <div class="field">
+                    <label for="tel">Мобільний номер:</label>
+                    <input id="tel" type="tel" name="phone" value="" placeholder="+380XXXXXXXXX" pattern="\+380[0-9]{9}" tabindex="5">
+                    <p class="hint">Формат: +380XXXXXXXXX.</p>
+                </div>
+
+                <div class="field">
+                    <label for="date">Дата народження:</label>
+                    <input id="date" type="date" name="birthdate" value="" tabindex="6">
+                </div>
+
+                <div class="field">
+                    <label for="about">Про себе:</label>
+                    <textarea id="about" name="about" value="" placeholder="Коротко розкажіть про себе" tabindex="7"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Навчання</legend>
+
+                <p class="group-title">Форма навчання:</p>
+                <div class="choices">
+                    <label class="choice"><input type="radio" name="study_form" value="fulltime" tabindex="8"> Денна</label>
+                    <label class="choice"><input type="radio" name="study_form" value="parttime" tabindex="9"> Заочна</label>
+                    <label class="choice"><input type="radio" name="study_form" value="dual" tabindex="10"> Дуальна</label>
+                </div>
+
+                <p class="group-title">Рівень володіння HTML:</p>
+                <div class="choices">
+                    <label class="choice"><input type="radio" name="html_level" value="beginner" tabindex="11"> Початковий</label>
+                    <label class="choice"><input type="radio" name="html_level" value="middle" checked tabindex="12"> Середній</label>
+                    <label class="choice"><input type="radio" name="html_level" value="advanced" tabindex="13"> Просунутий</label>
+                </div>
+
+                <p class="group-title">Що вам цікаво:</p>
+                <div class="choices four">
+                    <label class="choice"><input type="checkbox" name="interest_html" value="html" tabindex="14"> HTML</label>
+                    <label class="choice"><input type="checkbox" name="interest_css" value="css" tabindex="15"> CSS</label>
+                    <label class="choice"><input type="checkbox" name="interest_js" value="javascript" tabindex="16"> JavaScript</label>
+                    <label class="choice"><input type="checkbox" name="interest_git" value="git" tabindex="17"> Git</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Списки вибору</legend>
+
+                <div class="field">
+                    <label for="course">Курс:</label>
+                    <select id="course" name="course" tabindex="18">
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3" selected>3 курс</option>
+                        <option value="4">4 курс</option>
+                        <option value="5">5 курс</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="skills">Технології:</label>
+                    <select id="skills" name="skills" multiple tabindex="19">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                        <option value="cpp">C++</option>
+                        <option value="python">Python</option>
+                        <option value="git">Git</option>
+                    </select>
+                    <p class="hint">Можна вибрати декілька значень.</p>
+                </div>
+
+                <div class="field">
+                    <label for="subject">Предмет:</label>
+                    <select id="subject" name="subject" tabindex="20">
+                        <optgroup label="Програмування">
+                            <option value="cpp">C++</option>
+                            <option value="python">Python</option>
+                            <option value="js">JavaScript</option>
+                        </optgroup>
+                        <optgroup label="Web">
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="web">Web-технології</option>
+                        </optgroup>
+                        <optgroup label="Математика">
+                            <option value="algebra">Алгебра</option>
+                            <option value="discrete">Дискретна математика</option>
+                            <option value="analysis">Матаналіз</option>
+                        </optgroup>
+                        <optgroup label="Інше">
+                            <option value="english">Англійська</option>
+                            <option value="architecture">Архітектура ПК</option>
+                            <option value="algorithms">Алгоритми</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="city">Місто:</label>
+                    <input id="city" type="text" list="cities" name="city" value="" placeholder="Почніть вводити місто" tabindex="21">
+                    <datalist id="cities">
+                        <option value="Вінниця"></option>
+                        <option value="Дніпро"></option>
+                        <option value="Донецьк"></option>
+                        <option value="Житомир"></option>
+                        <option value="Ужгород"></option>
+                        <option value="Запоріжжя"></option>
+                        <option value="Івано-Франківськ"></option>
+                        <option value="Київ"></option>
+                        <option value="Кропивницький"></option>
+                        <option value="Луганськ"></option>
+                        <option value="Львів"></option>
+                        <option value="Миколаїв"></option>
+                        <option value="Одеса"></option>
+                        <option value="Полтава"></option>
+                        <option value="Рівне"></option>
+                        <option value="Сімферополь"></option>
+                        <option value="Суми"></option>
+                        <option value="Тернопіль"></option>
+                        <option value="Харків"></option>
+                        <option value="Херсон"></option>
+                        <option value="Хмельницький"></option>
+                        <option value="Черкаси"></option>
+                        <option value="Чернівці"></option>
+                        <option value="Чернігів"></option>
+                        <option value="Луцьк"></option>
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <div class="buttons">
+                <button type="submit" name="action" value="get" tabindex="22">Надіслати GET</button>
+                <button type="reset" name="reset" value="reset" tabindex="23">Очистити</button>
+            </div>
+        </form>
+
+        <form action="questionnaire.html" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Завантаження аудіо</legend>
+
+                <div class="file-row">
+                    <label for="audio">Аудіофайли:</label>
+                    <input id="audio" type="file" name="audio_files" value="" accept="audio/*" multiple required tabindex="24">
+                </div>
+
+                <div class="buttons" style="margin-top: 20px; margin-bottom: 0;">
+                    <button type="submit" name="send" value="post" tabindex="25">Надіслати POST</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="home">
+            <a href="../index.html">Повернутись на головну</a>
+        </div>
+    </div>
+</body>
+</html>

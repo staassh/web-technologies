@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+<rect width="400" height="400" fill="#f4f4f4"/>
+<circle cx="200" cy="160" r="95" fill="#ffdf5d"/>
+<path d="M90 310 Q200 210 310 310" fill="#79c267"/>
+<text x="200" y="365" text-anchor="middle" font-family="Arial" font-size="24">Вихідний день</text>
+</svg>
