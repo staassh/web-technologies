@@ -1,0 +1,94 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.recipe {
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    max-width: 944px;
+    min-height: 453px;
+    margin: 12px auto 0;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border: 1px solid rgb(105, 100, 181);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 28px;
+    color: rgb(235, 28, 23);
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0 0 23px;
+    font-size: 28px;
+    line-height: 32px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.products p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.products strong {
+    font-weight: bold;
+}
+
+.underlined {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+}
+
+.crossed {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+}
+
+sub {
+    font-size: 14px;
+    line-height: 0;
+}
+
+sup {
+    font-size: 11px;
+    line-height: 0;
+    vertical-align: super;
+}
+
+mark {
+    padding: 0 1px;
+    background-color: rgb(255, 254, 76);
+    color: inherit;
+}
+
+hr {
+    width: 592px;
+    max-width: 63%;
+    height: 6px;
+    margin: 15px auto 18px;
+    border: 0;
+    background-color: rgb(18, 122, 30);
+}
+
+#success-note {
+    margin: 0;
+    font-family: "Courier New", "Cousine", monospace;
+    font-size: 17px;
+    line-height: 21px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
