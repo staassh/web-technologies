@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #17354f;
+    line-height: 1.5;
+    background-color: #1b2a41;
+    background-image: url("img/landscape.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Якщо вікно вужче за 320px, min-width не дає main звузитися:
+   контейнер виходить за ширину вікна, виникає горизонтальна прокрутка. */
+h1 { margin-top: 0; font-size: 30px; }
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+a { color: #214f7a; }
+section { margin-top: 30px; }
+
+.inline-tags { white-space: nowrap; }
+.inline-tags > div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    background-color: #c5e2f4;
+}
+/* Для звичайного рядкового div width і height не діють:
+   його розмір визначають текст і висота рядка. */
+
+.block-tags { margin-top: 15px; }
+.block-tags > span {
+    display: block;
+    width: 150px;
+    margin-bottom: 5px;
+    background-color: #c5e2f4;
+}
+
+#repeat > div {
+    height: 200px;
+    margin-bottom: 15px;
+    background-color: #e7f2fa;
+    background-image: url("img/tile.svg");
+    background-size: 60px 60px;
+    background-position: left top;
+}
+.repeat-x { background-repeat: repeat-x; }
+.repeat-y { background-repeat: repeat-y; }
+.space { background-repeat: space; }
+.round { background-repeat: round; }
+/* space зберігає розмір плиток і розподіляє проміжки між ними;
+   round змінює розмір плиток, щоб ціла кількість заповнила блок без проміжків. */
+
+/* На вузькому екрані прокручується лише демонстрація:
+   розміри зразків 300x200px і padding контейнера зберігаються. */
+#size { overflow-x: auto; }
+
+#size > div {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+    margin: 0 15px 15px 0;
+    border: 2px solid #326b99;
+    vertical-align: top;
+    background-color: #d5e9f6;
+    background-image: url("img/landscape.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.contain { background-size: contain; }
+.cover { background-size: cover; }
+
+#attachment > div {
+    max-height: 150px;
+    overflow: auto;
+    border: 2px solid #326b99;
+    background-color: #e7f2fa;
+    background-image: url("img/landscape.svg");
+    background-size: 100% 180px;
+    background-repeat: repeat-y;
+    background-position: left top;
+}
+#attachment p { margin: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.6); }
+.scroll { background-attachment: scroll; }
+.local { background-attachment: local; }
+/* scroll: фон залишається на місці відносно рамки блоку при прокрутці тексту.
+   local: фон прокручується разом із вмістом усередині блоку. */
+
+strong { padding: 2px 6px; background-color: rgba(255, 255, 255, 0.9); }
+footer { margin-top: 25px; border-top: 1px solid #9aafc6; }

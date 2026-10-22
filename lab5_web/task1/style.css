@@ -1,0 +1,93 @@
+body {
+    margin: 9px;
+    font-family: Arial, sans-serif;
+}
+
+div {
+    box-sizing: border-box;
+    width: 500px;
+    padding: 20px;
+    color: white;
+    background-color: rgb(255, 165, 0);
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 25px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none inside;
+}
+
+div > ul > li {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0 20px 0 50px;
+    background-color: rgb(103, 158, 128);
+}
+
+ul ul {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 18px;
+}
+
+ul ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background-color: rgb(153, 180, 102);
+}
+
+span {
+    display: inline-block;
+    padding: 10px 20px;
+    vertical-align: top;
+}
+
+div > ul > li > span {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    background-color: rgb(199, 124, 106);
+}
+
+ul ul span {
+    font-weight: normal;
+    background-color: rgb(218, 106, 32);
+}
+
+/* Одна картинка зі зразка використана як спрайт лише для піктограм.
+   Текст, списки та кольорові блоки залишаються звичайними HTML/CSS. */
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 38px;
+    background-image: url("icons/reference.png");
+    background-size: 517.578125px 573.567708px;
+    background-repeat: no-repeat;
+}
+
+div > ul > li::before {
+    width: 50px;
+    height: 40px;
+    background-position: -28.645833px -63.802083px;
+}
+
+.route-icon::before { background-position: -78.776042px -113.932292px; }
+.ticket-icon::before { background-position: -78.776042px -162.109375px; }
+.hotel-icon::before { background-position: -78.776042px -209.635417px; }
+.car-icon::before { background-position: -78.776042px -257.812500px; }
+.bar-icon::before { background-position: -78.776042px -356.119792px; }
+.casino-icon::before { background-position: -78.776042px -404.296875px; }
+.museum-icon::before { background-position: -78.776042px -452.473958px; }
+.festival-icon::before { background-position: -78.776042px -500.000000px; }

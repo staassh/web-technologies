@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 25px 15px;
+    background-color: #eaf0f7;
+    color: #20354d;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 { margin: 0 0 20px; text-align: center; font-size: 30px; }
+form { max-width: 760px; margin: 0 auto; }
+table { width: 100%; border-collapse: collapse; }
+form > table { margin-bottom: 15px; }
+td { vertical-align: top; }
+fieldset { min-width: 0; margin: 0; padding: 15px; border: 2px solid #9aafc6; background-color: white; text-align: left; }
+fieldset td { padding: 7px; }
+fieldset td:first-child { width: 30%; }
+legend { padding: 0 10px; color: #214f7a; font-size: 20px; font-weight: bold; }
+label[for] { font-weight: bold; }
+label:not([for]) { display: inline-block; margin-bottom: 7px; }
+input, textarea, select, button { font: inherit; }
+input:not([type="radio"]):not([type="checkbox"]), textarea, select {
+    width: 100%;
+    min-width: 0;
+    padding: 9px;
+    border: 1px solid #9aafc6;
+    background-color: #f5f8fc;
+    color: #20354d;
+}
+textarea { min-height: 110px; resize: vertical; }
+select[multiple] { min-height: 160px; }
+input:focus, textarea:focus, select:focus { outline: 2px solid #376b9b; outline-offset: 2px; }
+small { font-size: 13px; color: #546b82; }
+button { margin: 4px; padding: 10px 20px; border: 1px solid #214f7a; background-color: #214f7a; color: white; cursor: pointer; }
+button[type="reset"] { background-color: #eaf0f7; color: #214f7a; }
+button:hover { background-color: #386f9f; color: white; }
+a { color: #214f7a; }
+
+@media (max-width: 650px) {
+    fieldset td, fieldset td:first-child { display: block; width: 100%; }
+    fieldset td:empty { display: none; }
+}

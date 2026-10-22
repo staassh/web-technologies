@@ -1,0 +1,61 @@
+body { margin: 20px; font-family: Arial, sans-serif; color: #20354d; }
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+
+.sizing > div {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #326b99;
+    margin: 20px;
+    vertical-align: top;
+    background-color: #e2f3ff;
+}
+
+.sizing > div:nth-of-type(1) {
+    box-sizing: content-box;
+    /* Загальна ширина рамки з вмістом: 300 + 2 * 20 + 2 * 5 = 350px.
+       Зовнішні margin додають ще 40px до зайнятого місця в рядку. */
+}
+
+.sizing > div:nth-of-type(2) {
+    box-sizing: border-box;
+    /* Загальна ширина: 300px; із зовнішніми margin займає 340px. */
+}
+
+.overflow > div {
+    display: inline-block;
+    width: 260px;
+    max-height: 80px;
+    margin: 0 15px 0 0;
+    border: 2px solid #326b99;
+    vertical-align: top;
+    background-color: #e2f3ff;
+    line-height: 20px;
+}
+
+.overflow p { margin: 0; }
+.overflow > div:nth-of-type(1) { overflow: visible; }
+.overflow > div:nth-of-type(2) { overflow: hidden; }
+.overflow > div:nth-of-type(3) { overflow: scroll; }
+.overflow > div:nth-of-type(4) { overflow: auto; }
+
+/* Демонстрація overflow розміщена наприкінці сторінки:
+   visible може виходити за рамку без перекриття наступних розділів. */
+
+ul { padding: 0; list-style-type: none; }
+li { display: inline-block; margin: 0 4px 5px 0; }
+a { display: block; padding: 10px 20px; background-color: #326b99; color: white; text-decoration: none; }
+a:hover { background-color: #214f7a; }
+
+/* display: none прибирає пункт і місце, яке він займав.
+   visibility: hidden зберігає місце, але приховує елемент.
+   opacity: 0 робить елемент прозорим, зберігаючи його місце та взаємодію. */
+li:nth-child(4) { display: none; }
+
+@media (max-width: 1150px) {
+    .overflow { padding-bottom: 20px; }
+    .overflow > div { display: block; margin-bottom: 20px; }
+    /* Залишаємо місце для видимої частини тексту та проміжок до наступного блоку. */
+    .overflow > div:first-of-type { margin-bottom: 200px; }
+}
