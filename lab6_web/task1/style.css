@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+}
+
+.scheme {
+    position: relative;   
+    width: 620px;
+    height: 330px;
+}
+
+.box {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 6px 30px 0;
+    border: 3px solid #262626;
+    font-size: 24px;
+    line-height: 44px;
+    text-align: center;
+}
+
+.box-top {
+    top: 0;
+    left: 188px;
+    width: 252px;
+    height: 168px;
+    background-color: #00b050;
+    color: #1a1a1a;
+    z-index: 1;
+}
+
+.box-left {
+    top: 165px;
+    left: 0;
+    width: 295px;
+    height: 165px;
+    background-color: #558ed5;
+    color: #ffffff;
+    z-index: 2;  
+}
+
+.box-right {
+    top: 165px;
+    left: 348px;
+    width: 272px;
+    height: 165px;
+    background-color: #93cddd;
+    color: #262626;
+    z-index: 2;
+}

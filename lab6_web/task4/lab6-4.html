@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6. Завдання 4</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sidenav">
+        <div class="sidenav-logo">Лабораторна №6</div>
+        <ul class="side-menu">
+            <li class="side-item active">
+                <a class="side-link" href="#home"><i class="material-icons">home</i>Головна</a>
+            </li>
+            <li class="side-item">
+                <a class="side-link" href="#about"><i class="material-icons">article</i>Про курс</a>
+                <ul class="side-sub">
+                    <li class="side-item"><a class="side-link" href="#about">Програма</a></li>
+                    <li class="side-item">
+                        <a class="side-link side-link--more" href="#about">Модулі</a>
+                        <ul class="side-sub">
+                            <li class="side-item"><a class="side-link" href="#position">Позиціонування</a></li>
+                            <li class="side-item"><a class="side-link" href="#pseudo">Псевдокласи</a></li>
+                            <li class="side-item"><a class="side-link" href="#pseudo">Псевдоелементи</a></li>
+                        </ul>
+                    </li>
+                    <li class="side-item"><a class="side-link" href="#about">Викладачі</a></li>
+                </ul>
+            </li>
+            <li class="side-item">
+                <a class="side-link" href="#labs"><i class="material-icons">science</i>Лабораторні</a>
+                <ul class="side-sub">
+                    <li class="side-item">
+                        <a class="side-link side-link--more" href="#labs">Лабораторна №5</a>
+                        <ul class="side-sub">
+                            <li class="side-item"><a class="side-link" href="#labs">Списки</a></li>
+                            <li class="side-item"><a class="side-link" href="#labs">Таблиці</a></li>
+                            <li class="side-item"><a class="side-link" href="#labs">Градієнти</a></li>
+                        </ul>
+                    </li>
+                    <li class="side-item">
+                        <a class="side-link side-link--more" href="#labs">Лабораторна №6</a>
+                        <ul class="side-sub">
+                            <li class="side-item"><a class="side-link" href="#position">Позиціонування</a></li>
+                            <li class="side-item"><a class="side-link" href="#pseudo">Форма</a></li>
+                            <li class="side-item"><a class="side-link" href="#labs">Попап</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="side-item">
+                <a class="side-link" href="#work"><i class="material-icons">free_breakfast</i>Співпраця</a>
+            </li>
+            <li class="side-item">
+                <a class="side-link" href="#contacts"><i class="material-icons">mail</i>Контакти</a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="topnav">
+        <ul class="top-menu">
+            <li class="top-item active">
+                <a class="top-link" href="#home" title="Головна"><i class="material-icons">home</i></a>
+            </li>
+            <li class="top-item">
+                <a class="top-link" href="#about" title="Пошук"><i class="material-icons">search</i></a>
+                <ul class="top-sub">
+                    <li><a class="top-sub-link" href="#about">Пошук по курсу</a></li>
+                    <li><a class="top-sub-link" href="#labs">Пошук лабораторних</a></li>
+                </ul>
+            </li>
+            <li class="top-item">
+                <a class="top-link" href="#contacts" title="Пошта"><i class="material-icons">mail</i></a>
+                <ul class="top-sub">
+                    <li><a class="top-sub-link" href="#contacts">Вхідні</a></li>
+                    <li><a class="top-sub-link" href="#contacts">Надіслані</a></li>
+                    <li><a class="top-sub-link" href="#contacts">Написати лист</a></li>
+                </ul>
+            </li>
+            <li class="top-item">
+                <a class="top-link" href="#labs" title="Налаштування"><i class="material-icons">settings</i></a>
+            </li>
+
+            <li class="top-item top-item--right">
+                <a class="top-link" href="#work" title="Профіль"><i class="material-icons">account_circle</i></a>
+                <ul class="top-sub">
+                    <li><a class="top-sub-link" href="#work">Мій профіль</a></li>
+                    <li><a class="top-sub-link" href="#work">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section class="section" id="home">
+            <h1 class="title">CSS позиціонування та навігаційні панелі</h1>
+            <p class="text">Горизонтальна панель закріплена вгорі сторінки через <code>position: fixed</code>. Перший рівень меню складається з іконок, пункт профілю стоїть справа завдяки <code>float: right</code>.</p>
+            <p class="text">Вертикальна панель зліва теж фіксована і займає всю висоту вікна. У ній три рівні вкладеності, наприклад «Лабораторні», далі «Лабораторна №6» і її пункти.</p>
+        </section>
+
+        <nav class="stickynav">
+            <ul class="sticky-menu">
+                <li class="sticky-item active"><a class="sticky-link" href="#home">Огляд</a></li>
+                <li class="sticky-item"><a class="sticky-link" href="#about">Про курс</a></li>
+                <li class="sticky-item"><a class="sticky-link" href="#position">Позиціонування</a></li>
+                <li class="sticky-item"><a class="sticky-link" href="#pseudo">Псевдокласи</a></li>
+                <li class="sticky-item"><a class="sticky-link" href="#labs">Лабораторні</a></li>
+                <li class="sticky-item"><a class="sticky-link" href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
+
+        <section class="section" id="about">
+            <h2 class="subtitle">Про курс</h2>
+            <p class="text">Курс «Веб-технології» охоплює HTML, CSS і основи верстки сторінок. На цій сторінці використано позиціонування для побудови меню.</p>
+            <p class="text">Якщо прокрутити сторінку вниз, верхня панель залишається на місці, а меню розділів прилипає одразу під нею.</p>
+        </section>
+
+        <section class="section" id="position">
+            <h2 class="subtitle">Позиціонування</h2>
+            <p class="text"><code>static</code> означає звичайне розташування в потоці документа. <code>relative</code> зсуває елемент відносно його початкового місця і робить його точкою відліку для вкладених абсолютних елементів.</p>
+            <p class="text">Елемент з <code>absolute</code> виходить із потоку і розташовується відносно батька з <code>position: relative</code>. Так зроблені всі випадні підменю.</p>
+            <p class="text"><code>fixed</code> закріплює елемент відносно вікна браузера, а <code>sticky</code> поводиться як static, поки не дійде до заданої позиції, після чого прилипає.</p>
+        </section>
+
+        <section class="section" id="pseudo">
+            <h2 class="subtitle">Псевдокласи</h2>
+            <p class="text">Псевдоклас <code>:hover</code> змінює колір пункту меню і відкриває підменю. <code>:focus-within</code> дозволяє відкрити підменю з клавіатури через Tab.</p>
+            <p class="text">Поточний пункт має клас <code>active</code> і виділений іншим кольором.</p>
+        </section>
+
+        <section class="section" id="labs">
+            <h2 class="subtitle">Лабораторні</h2>
+            <p class="text">У лабораторній №6 шість завдань: позиціонування блоків, поява блоків при наведенні, форма реєстрації, навігаційні панелі, тінь і прозорість, попап на CSS.</p>
+            <p class="text">Кожне завдання лежить в окремій папці зі своїм файлом стилів.</p>
+        </section>
+
+        <section class="section" id="work">
+            <h2 class="subtitle">Співпраця</h2>
+            <p class="text">Сюди веде пункт «Співпраця» у бічному меню та пункт профілю у верхньому.</p>
+        </section>
+
+        <section class="section" id="contacts">
+            <h2 class="subtitle">Контакти</h2>
+            <p class="text">Сюди веде пункт «Контакти» та підменю пошти.</p>
+        </section>
+    </main>
+
+</body>
+</html>
