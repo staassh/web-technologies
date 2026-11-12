@@ -1,0 +1,20 @@
+/* Nesting Flexbox for vertical and horizontal centering */
+:root {
+  --font-main: 'Open Sans', sans-serif;
+  --color-primary: #ffc600;
+  --color-dark: #272727;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+}
+
+.slider-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.slider-nav li { flex: 2; display: flex; }
+.slider-nav .arrow { flex: 1; }
+.slider-nav a { flex-basis: 100%; display: flex; align-items: center; justify-content: center; }

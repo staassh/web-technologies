@@ -1,0 +1,19 @@
+/* Alignment and Centering with align-self */
+:root {
+  --font-main: 'Open Sans', sans-serif;
+  --color-primary: #ffc600;
+  --color-dark: #272727;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+}
+
+.container { display: flex; align-items: flex-start; min-height: 100vh; }
+.box { padding: 20px; }
+.box2 { align-self: flex-end; }
