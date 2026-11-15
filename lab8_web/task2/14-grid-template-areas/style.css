@@ -1,0 +1,38 @@
+:root {
+  --bg-page: #f5f6f8;
+  --bg-card: #ffffff;
+  --text-main: #22252a;
+  --text-muted: #5a6069;
+  --accent: #f9c828;
+  --accent-dark: #2c3e50;
+  --border-color: #d8dde3;
+  --btn-bg: #7a7d82;
+  --btn-hover: #5e6166;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --gap-grid: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-page);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container { display: grid; gap: 20px; padding: 20px; grid-template-columns: 1fr 3fr 1fr; grid-template-areas: "sidebar-1 content sidebar-2" "footer footer footer"; }
+.item { background: var(--accent); padding: 20px; }
+.item1 { grid-area: sidebar-1; }
+.item2 { grid-area: content; }
+.item3 { grid-area: sidebar-2; }
+.footer { grid-area: footer; }

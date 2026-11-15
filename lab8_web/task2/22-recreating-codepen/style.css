@@ -1,0 +1,36 @@
+:root {
+  --bg-page: #f5f6f8;
+  --bg-card: #ffffff;
+  --text-main: #22252a;
+  --text-muted: #5a6069;
+  --accent: #f9c828;
+  --accent-dark: #2c3e50;
+  --border-color: #d8dde3;
+  --btn-bg: #7a7d82;
+  --btn-hover: #5e6166;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --gap-grid: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-page);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.codepen { display: grid; grid-template-rows: auto 1fr 1fr auto; height: 100vh; }
+.pen, .settings { background: #1e1f26; color: #fff; padding: 12px 20px; }
+.code { background: #2c303a; color: #fff; padding: 20px; }
+.preview { background: #fff; padding: 20px; }
