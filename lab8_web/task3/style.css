@@ -1,0 +1,94 @@
+:root {
+  --bg-page: #f5f6f8;
+  --bg-card: #ffffff;
+  --text-main: #22252a;
+  --text-muted: #5a6069;
+  --accent: #f9c828;
+  --accent-dark: #2c3e50;
+  --border-color: #d8dde3;
+  --btn-bg: #7a7d82;
+  --btn-hover: #5e6166;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --gap-grid: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-page);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 210px);
+  gap: var(--gap-grid);
+}
+
+.photo {
+  background: var(--bg-card);
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.03);
+}
+
+/* Even variant placement: central image spans 3 columns and 2 rows */
+.photo--main {
+  grid-column: 2 / 5;
+  grid-row: 1 / 3;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: 220px;
+  }
+
+  .photo--main {
+    grid-column: 1 / -1;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 230px;
+  }
+
+  .photo--main {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+}
