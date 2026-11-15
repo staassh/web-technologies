@@ -1,0 +1,94 @@
+:root {
+  --bg-page: #f5f6f8;
+  --bg-card: #ffffff;
+  --text-main: #22252a;
+  --text-muted: #5a6069;
+  --accent: #f9c828;
+  --accent-dark: #2c3e50;
+  --border-color: #d8dde3;
+  --btn-bg: #7a7d82;
+  --btn-hover: #5e6166;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --gap-grid: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-page);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+.tree-grid {
+  counter-reset: tree-item;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 92px);
+  gap: 10px;
+}
+
+.node {
+  counter-increment: tree-item;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.node::before {
+  content: counter(tree-item);
+}
+
+/* Row 1: Block 1 (12 cols) */
+.node:nth-child(1) { grid-column: 1 / -1; }
+
+/* Row 2: Blocks 2..3 (6 cols each) */
+.node:nth-child(n+2):nth-child(-n+3) { grid-column: span 6; }
+
+/* Row 3: Blocks 4..6 (4 cols each) */
+.node:nth-child(n+4):nth-child(-n+6) { grid-column: span 4; }
+
+/* Row 4: Blocks 7..10 (3 cols each) */
+.node:nth-child(n+7):nth-child(-n+10) { grid-column: span 3; }
+
+/* Row 5: Blocks 11..16 (2 cols each) */
+.node:nth-child(n+11):nth-child(-n+16) { grid-column: span 2; }
+
+/* Row 6: Blocks 17..28 (1 col each) */
+.node:nth-child(n+17):nth-child(-n+28) { grid-column: span 1; }
+
+@media (max-width: 768px) {
+  .tree-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 74px;
+  }
+
+  .node:nth-child(1) { grid-column: span 6; }
+  .node:nth-child(n+2):nth-child(-n+3) { grid-column: span 3; }
+  .node:nth-child(n+4):nth-child(-n+6) { grid-column: span 2; }
+  .node:nth-child(n+7):nth-child(-n+10) { grid-column: span 3; }
+  .node:nth-child(n+11):nth-child(-n+16) { grid-column: span 2; }
+  .node:nth-child(n+17):nth-child(-n+28) { grid-column: span 1; }
+}
